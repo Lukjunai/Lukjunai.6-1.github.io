@@ -3,169 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>whatanamol | Portfolio</title>
-        /* Modern CSS Reset & Variables */
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #7dd3fc;
-        }
-
+    <title>Whatanamol's Portfolio</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: #f8f9fa;
+            color: #333;
             line-height: 1.6;
         }
 
-        /* Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(8px);
-            z-index: 1000;
-            border-bottom: 1px solid #334155;
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
+        nav {
+            background-color: #ffffff;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 10%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .logo {
+        nav .logo {
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-decoration: none;
+            font-weight: bold;
+            color: #4f46e5;
         }
 
-        .nav-links {
+        nav ul {
             display: flex;
-            gap: 2rem;
             list-style: none;
         }
 
-        .nav-links a {
-            color: var(--text-main);
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
             text-decoration: none;
+            color: #555;
             font-weight: 500;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--accent);
+        nav ul li a:hover {
+            color: #4f46e5;
         }
 
-        /* Sections General */
-        section {
-            padding: 8rem 2rem 4rem 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
+        header {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            padding: 4rem 10%;
+            text-align: center;
         }
 
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 50%;
-            height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
-        }
-
-        /* Hero Section */
-        #hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-top: 0;
-        }
-
-        .hero-tag {
-            color: var(--accent);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-        }
-
-        .hero-title {
-            font-size: 4rem;
-            line-height: 1.1;
+        .hero-top-text {
             margin-bottom: 1.5rem;
         }
 
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 2.5rem;
+        .hero-top-line {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ff69b4;
+            margin-bottom: 0.35rem;
+        }
+
+        .hero-image {
+            display: block;
+            margin: 0 auto 1.5rem;
+            width: 260px;
+            max-width: 80%;
+            height: auto;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            border: 4px solid white;
+        }
+
+        .hero-bottom-name {
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: #0b3d91;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero-bottom-school {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #b8860b;
+            margin-bottom: 1.8rem;
         }
 
         .btn {
             display: inline-block;
-            background-color: transparent;
-            color: var(--accent);
-            border: 2px solid var(--accent);
-            padding: 0.8rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 4px;
+            background-color: white;
+            color: #4f46e5;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .btn:hover {
-            background-color: var(--accent);
-            color: var(--bg-color);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 4rem;
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
         }
 
-        .skills-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-            list-style: none;
+        section {
+            margin-bottom: 4rem;
         }
 
-        .skills-list li::before {
-            content: "▹ ";
-            color: var(--accent);
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
         }
 
-        /* Projects Section */
+        section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: #4f46e5;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .about-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -173,165 +157,190 @@
         }
 
         .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid #334155;
+            background: white;
             border-radius: 8px;
-            padding: 2rem;
-            transition: transform 0.3s, border-color 0.3s;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent);
         }
 
-        .project-icon {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
+        .project-img {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-weight: bold;
         }
 
-        .project-title {
-            font-size: 1.3rem;
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
             margin-bottom: 0.5rem;
         }
 
-        .project-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-tech {
-            display: flex;
-            gap: 0.8rem;
-            font-size: 0.8rem;
-            color: var(--accent);
-            list-style: none;
-        }
-
-        /* Contact Section */
-        #contact {
+        .contact-info {
             text-align: center;
-            max-width: 600px;
-            padding-bottom: 8rem;
         }
 
-        #contact p {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
 
-        /* Responsive Design */
+        footer {
+            background-color: #1f2937;
+            color: #9ca3af;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
-            .about-content { grid-template-columns: 1fr; gap: 2rem; }
-            .nav-links { display: none; } /* Simplified for template */
+            nav {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 1rem;
+            }
+
+            header {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-top-line {
+                font-size: 1rem;
+            }
+
+            .hero-bottom-name {
+                font-size: 1.8rem;
+            }
+
+            .hero-bottom-school {
+                font-size: 1rem;
+            }
+
+            .hero-image {
+                width: 220px;
+            }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="logo">Whatanamol.</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#SOP">My SOP</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- Header / Navigation -->
     <header>
-        <nav class="nav-container">
-            <a href="#hero" class="logo">whatanamol</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Work</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="hero-top-text">
+            <div class="hero-top-line">Faculty of Allied Health Sciences</div>
+            <div class="hero-top-line">Department of Physical Therapy</div>
+            <div class="hero-top-line">Chulalongkorn University</div>
+        </div>
+
+        <img src="IMG_7616.png" alt="Whatanamol" class="hero-image">
+
+        <div class="hero-bottom-name">Whatanamol petchrak</div>
+        <div class="hero-bottom-school">Saint Joseph Thiphawan School</div>
+
+        <a href="#contact" class="btn">Get In Touch</a>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <p class="hero-tag">Hi, my name is</p>
-        <h1 class="hero-title">Anmol.</h1>
-        <h2 class="hero-subtitle">I build sleek, interactive digital experiences and clean software solutions.</h2>
-        <div>
-            <a href="#projects" class="btn">View My Work</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div>
-                <p>Hello! I'm Anmol, a creator passionate about turning complex problems into beautifully straightforward interfaces. My journey involves blending clean code with striking user experience design.</p>
-                <br>
-                <p>Here are a few technologies I've been working with recently:</p>
-                <ul class="skills-list">
-                    <li>HTML5 & CSS3 / Tailwind</li>
-                    <li>JavaScript (ES6+)</li>
-                    <li>React.js</li>
-                    <li>Node.js</li>
-                    <li>Python</li>
-                    <li>Git & GitHub</li>
-                </ul>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-text">
+                <p>
+                    Hello! I'm Whatanamol. I am interested in health sciences and passionate about learning, helping others,
+                    and developing myself through academic work and meaningful activities. I enjoy turning my ideas into real projects
+                    and using knowledge to create positive impacts for people around me.
+                </p>
             </div>
-            <div>
-                <!-- Optional placeholder for a profile style block -->
-                <div class="Whatanamol">
+        </section>
 
-    <img src="IMG_1813.jpeg" alt="Whatanamol">
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">Project 1</div>
+                    <div class="project-info">
+                        <h3>Science Research Project</h3>
+                        <p>
+                            A project studying the effects of different colored plastic covers on soil pH, temperature, humidity,
+                            and the growth of jasmine plants.
+                        </p>
+                    </div>
+                </div>
 
-</div>
+                <div class="project-card">
+                    <div class="project-img">Project 2</div>
+                    <div class="project-info">
+                        <h3>Environmental Activity</h3>
+                        <p>
+                            Participation in environmental activities focused on waste separation, sustainability, and promoting
+                            awareness of environmental conservation in school and community.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">Project 3</div>
+                    <div class="project-info">
+                        <h3>Academic Portfolio</h3>
+                        <p>
+                            A collection of my academic work, achievements, and personal development experiences that reflect my goal
+                            of studying in the Faculty of Allied Health Sciences.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2 class="section-title">Some Things I've Built</h2>
-        <div class="projects-grid">
-            
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-icon">📁</div>
-                <h3 class="project-title">E-Commerce Dynamic Interface</h3>
-                <p class="project-desc">A fully functional interface featuring fast state management, responsive filtering, and seamless cart mechanics.</p>
-                <ul class="project-tech">
-                    <li>React</li>
-                    <li>Tailwind</li>
-                    <li>Redux</li>
-                </ul>
+        <section id="SOP">
+            <h2>My SOP</h2>
+            <div class="about-text">
+                <p>
+                    I aspire to study Physical Therapy in the Faculty of Allied Health Sciences at Chulalongkorn University.
+                    My interest in this field began from personal experiences with injuries and grew into a strong motivation
+                    to help others regain movement, confidence, and a better quality of life through rehabilitation and care.
+                </p>
             </div>
+        </section>
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-icon">📊</div>
-                <h3 class="project-title">Task Management API</h3>
-                <p class="project-desc">A robust RESTful API built to handle task assignments, user authentication, and performance analytics tracking.</p>
-                <ul class="project-tech">
-                    <li>Node.js</li>
-                    <li>Express</li>
-                    <li>MongoDB</li>
-                </ul>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <p>Thank you for visiting my portfolio.</p>
+                <p><strong>Email:</strong> kanokporn@example.com</p>
+                <p><strong>LinkedIn:</strong> linkedin.com/in/kanokporn</p>
             </div>
+        </section>
+    </div>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-icon">🌐</div>
-                <h3 class="project-title">AI Automation Dashboard</h3>
-                <p class="project-desc">An interactive analytics portal that displays background process efficiency metrics and real-time event logging.</p>
-                <ul class="project-tech">
-                    <li>Python</li>
-                    <li>React</li>
-                    <li>FastAPI</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <p>I'm currently open to new opportunities, collaborations, or just answering a quick question. Drop an email and let's build something spectacular.</p>
-        <a href="mailto:your.email@example.com" class="btn">Say Hello</a>
-    </section>
-
+    <footer>
+        <p>&copy; 2026 Whatanamol. All rights reserved.</p>
+    </footer>
 </body>
 </html>
+
